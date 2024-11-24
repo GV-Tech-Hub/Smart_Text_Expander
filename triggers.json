@@ -1,0 +1,12 @@
+{
+  "UPP": {
+    "enabled": true,
+    "response": "can you write  me a python script including all of the updates and ill copy and paste",
+    "tags": []
+  },
+  "CP": {
+    "enabled": true,
+    "response": "can you write this and compile it all into a zip folder for me to download with a python script",
+    "tags": []
+  }
+}
