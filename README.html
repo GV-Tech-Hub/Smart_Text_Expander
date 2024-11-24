@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Text Expander - README</title>
+    <style>
+        body {
+            background-color: #2b2b2b;
+            color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        a {
+            color: #61dafb;
+        }
+        h1, h2, h3 {
+            color: #61dafb;
+        }
+        code {
+            background-color: #3c3c3c;
+            padding: 2px 4px;
+            border-radius: 4px;
+            color: #ffcc00;
+        }
+        pre {
+            background-color: #3c3c3c;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        ul, ol {
+            margin-left: 20px;
+        }
+        blockquote {
+            border-left: 4px solid #61dafb;
+            padding-left: 10px;
+            color: #cccccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Smart Text Expander</h1>
+    <img src="banner.png" alt="Smart Text Expander Banner" style="width:100%; max-width:600px;">
+
+    <h2>Overview</h2>
+    <p><strong>Smart Text Expander</strong> is a versatile tool designed to streamline your typing by automatically expanding predefined trigger words into longer, frequently used phrases or snippets. Whether you're drafting emails, coding, or writing documents, Smart Text Expander enhances your productivity by reducing repetitive typing tasks.</p>
+
+    <h2>Why Smart Text Expander?</h2>
+    <p>Repetitive typing can be time-consuming and monotonous. Smart Text Expander was created to alleviate this by allowing users to define trigger words that automatically expand into desired text. This tool is perfect for individuals and professionals who want to save time, reduce errors, and maintain consistency in their written communications.</p>
+
+    <h2>Features</h2>
+    <ul>
+        <li><strong>Easy Installation:</strong> Simple setup process with automated dependency management.</li>
+        <li><strong>User-Friendly Interface:</strong> Intuitive GUI built with PySide6 for managing triggers.</li>
+        <li><strong>Customizable Triggers:</strong> Add, update, delete, import, and export trigger phrases effortlessly.</li>
+        <li><strong>Dark Mode:</strong> A sleek dark-themed interface that's easy on the eyes.</li>
+        <li><strong>Global Keyboard Hook:</strong> Works across all applications to detect and expand triggers in real-time.</li>
+    </ul>
+
+    <h2>How It Was Made</h2>
+    <p>Smart Text Expander is developed using Python 3.8 and leverages the PySide6 library for the graphical user interface. The tool employs the <code>keyboard</code> library to intercept and handle keyboard events, allowing it to detect trigger words globally across the system. Dependencies are managed within a virtual environment to ensure a smooth installation process.</p>
+
+    <h2>Installation</h2>
+    <h3>Prerequisites</h3>
+    <ul>
+        <li><strong>Operating System:</strong> Windows</li>
+        <li><strong>Python:</strong> Version 3.8 or later</li>
+    </ul>
+
+    <h3>Steps</h3>
+    <ol>
+        <li><strong>Clone the Repository:</strong>
+            <pre><code>git clone https://github.com/yourusername/Smart-Text-Expander.git</code></pre>
+        </li>
+        <li><strong>Navigate to the Directory:</strong>
+            <pre><code>cd Smart-Text-Expander</code></pre>
+        </li>
+        <li><strong>Install Dependencies:</strong>
+            <pre><code>python install.py</code></pre>
+        </li>
+    </ol>
+    <p><em>Note: The installation script will set up a virtual environment, install required packages, and create a desktop shortcut for easy access.</em></p>
+
+    <h2>Usage</h2>
+    <ol>
+        <li><strong>Launch Smart Text Expander:</strong>
+            <ul>
+                <li>Use the desktop shortcut named "Smart Text Expander".</li>
+                <li>Or run <code>Smart Text Expander.py</code> from the installation directory:
+                    <pre><code>python Smart\ Text\ Expander.py</code></pre>
+                </li>
+            </ul>
+        </li>
+        <li><strong>Add a Trigger:</strong>
+            <ul>
+                <li>Enter a trigger word (e.g., <code>sig</code>).</li>
+                <li>Enter the expanded text (e.g., your email signature).</li>
+                <li>Click "Add/Update".</li>
+            </ul>
+        </li>
+        <li><strong>Manage Triggers:</strong>
+            <ul>
+                <li>Select a trigger from the list to edit or delete.</li>
+                <li>Use the "Export Triggers" and "Import Triggers" buttons to backup or restore your triggers.</li>
+            </ul>
+        </li>
+        <li><strong>Use in Any Application:</strong>
+            <ul>
+                <li>Type your trigger word followed by a space or enter, and it will automatically expand.</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>Example Scenario</h2>
+    <p><strong>Customer Support Representative:</strong></p>
+    <p>Imagine you're a customer support rep who frequently sends the same responses to common queries. Instead of typing out the full response each time, you can set up triggers like:</p>
+    <ul>
+        <li><strong>Trigger:</strong> <code>tyvm</code></li>
+        <li><strong>Expansion:</strong> <em>Thank you very much for reaching out. We appreciate your patience.</em></li>
+    </ul>
+    <p>Now, whenever you type <code>tyvm</code> followed by a space or enter, Smart Text Expander will automatically expand it to the full thank-you message, saving you time and ensuring consistency in your communications.</p>
+
+    <h2>Requirements</h2>
+    <ul>
+        <li><strong>Python 3.8 or later</strong></li>
+        <li><strong>Windows Operating System</strong></li>
+    </ul>
+
+    <h2>Contributing</h2>
+    <p>Contributions are welcome! Please fork the repository and submit a pull request for any enhancements or bug fixes.</p>
+
+    <h2>License</h2>
+    <p>This project is licensed under the MIT License. See the <a href="LICENSE">LICENSE</a> file for details.</p>
+
+    <h2>Support</h2>
+    <p>If you encounter any issues or have questions, feel free to open an issue on the <a href="https://github.com/yourusername/Smart-Text-Expander">GitHub repository</a>.</p>
+
+</body>
+</html>
