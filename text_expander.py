@@ -4,6 +4,8 @@ import json
 import keyboard
 import os
 from typing import Dict, Any
+from win32gui import ShowWindow
+from win32con import SW_RESTORE, SW_MINIMIZE
 
 class TextExpander:
     def __init__(self):
@@ -16,6 +18,9 @@ class TextExpander:
         self.load_triggers()
         self.load_settings()
         keyboard.on_press(self.on_key_press)
+        # Register global hotkey for showing/hiding window
+        keyboard.add_hotkey('alt+s', self.toggle_window)
+        self.ui = None  # Will be set by SettingsUI
 
     def load_triggers(self):
         try:
@@ -77,6 +82,10 @@ class TextExpander:
                 self.buffer = ""
                 break
 
+    def toggle_window(self):
+        if self.ui:
+            self.ui.toggle_window_visibility()
+
 class SettingsUI:
     def __init__(self, expander):
         self.expander = expander
@@ -84,6 +93,8 @@ class SettingsUI:
         self.root.title("Smart Text Expander")
         self.root.geometry("800x600")
         self.setup_ui()
+        self.expander.ui = self  # Set UI reference in expander
+        self.window_visible = True
 
     def setup_ui(self):
         # Style configuration (matching options.html lines 6-88)
@@ -476,6 +487,15 @@ class SettingsUI:
         self.expander.settings['require_space'] = self.space_trigger_var.get()
         self.expander.save_settings()
 
+    def toggle_window_visibility(self):
+        if self.window_visible:
+            self.root.withdraw()  # This hides the window completely
+            self.window_visible = False
+        else:
+            self.root.deiconify()  # This restores the window
+            self.root.lift()  # Brings window to front
+            self.window_visible = True
+
     def run(self):
         self.root.mainloop()
 
@@ -488,11 +508,8 @@ def main():
         # Get the current console window
         console_window = win32gui.GetForegroundWindow()
         
-        # Hide console window
-        win32gui.ShowWindow(console_window, win32con.SW_MINIMIZE)
-        
-        # Optional: Hide from taskbar
-        # win32gui.ShowWindow(console_window, win32con.SW_HIDE)
+        # Hide console window completely
+        win32gui.ShowWindow(console_window, win32con.SW_HIDE)
     
     expander = TextExpander()
     ui = SettingsUI(expander)
