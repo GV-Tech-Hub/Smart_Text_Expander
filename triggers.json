@@ -8,5 +8,12 @@
     "enabled": true,
     "response": "can you write this and compile it all into a zip folder for me to download with a python script",
     "tags": []
+  },
+  "CIN": {
+    "enabled": true,
+    "response": "I am just testing to see if it works",
+    "tags": [
+      "W"
+    ]
   }
 }
