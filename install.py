@@ -105,13 +105,13 @@ def create_shortcut():
         shortcut_path = os.path.join(desktop, "Smart Text Expander.bat")
         current_dir = os.path.abspath(os.getcwd())
         
-        batch_content = f"""@echo off
+        batch_content = f'''@echo off
 cd /d "{current_dir}"
 start /min cmd /c "
 call "{current_dir}\\venv\\Scripts\\activate.bat" && 
 "{current_dir}\\venv\\Scripts\\pythonw.exe" "{current_dir}\\text_expander.py"
 "
-"""
+'''
         
         with open(shortcut_path, 'w', encoding='utf-8') as f:
             f.write(batch_content)
