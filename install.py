@@ -74,7 +74,7 @@ def setup_virtual_environment():
                       check=True, capture_output=True)
 
         # Install each package separately with error handling
-        packages = ["wheel", "keyboard", "PySide6"]
+        packages = ["wheel", "keyboard", "PySide6", "pywin32"]
         for package in packages:
             print(f"Installing {package}...")
             try:
